@@ -23,7 +23,7 @@ mfobj.parse  = function(text, _settings = {}) {
       if (_settings.width) settings.width = _settings.width;
       if (_settings.height) settings.color = _settings.height;
     }
-    if (settings.color == "black") return text.split('￼').join(`<img src="https://cdn.jsdelivr.net/gh/bribes/mobile-obj-parser/images/obj_black.png" width="${settings.width}" height="${mfobj.settings.height}" class="mobile-obj obj-black">`);
+    if (settings.color == "black") return text.split('￼').join(`<img src="https://cdn.jsdelivr.net/gh/bribes/mobile-obj-parser/images/obj_black.png" width="${settings.width}" height="${settings.height}" class="mobile-obj obj-black">`);
     return text.split('￼').join(`<img src="https://cdn.jsdelivr.net/gh/bribes/mobile-obj-parser/images/obj_white.png" width="${settings.width}" height="${settings.height}" class="mobile-obj obj-white">`);
   } else {
     return text;
