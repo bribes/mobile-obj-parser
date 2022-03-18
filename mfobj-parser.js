@@ -1,8 +1,3 @@
-function isMobile() {
-  try{ document.createEvent("TouchEvent"); return true; }
-  catch(e){ return false; }
-}
-
 var mfobj = {};
 
 mfobj.settings = {
@@ -11,8 +6,13 @@ mfobj.settings = {
   height: 12
 }; // color: white | black
 
+mfobj.isMobile = function() {
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
+}
+
 mfobj.parse  = function(text, _settings = {}) { 
-  if (isMobile() == true) {
+  if (mfobj.isMobile() == true) {
     var settings = mfobj.settings;
     if (_settings !== {}) { 
       if (_settings.color) settings.color = _settings.color;
